@@ -1,0 +1,9 @@
+<div class="cointainer">
+
+<h1> Create your list </h1>
+<%= simple_form_for @list do |f| %>
+  <%= f.input :name, placeholder: "Name" %>
+  <%= f.submit "create" %>
+<% end %>
+
+</div>

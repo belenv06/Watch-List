@@ -1,0 +1,5 @@
+
+<%= simple_form_for[@list, @bookmark] do |f| %>
+  <%= f.input :comment, placeholder => "Escribe un comentario" %>
+  <%= f.submmit "Publicar", class: "btn btn-primary" %>
+<% end %>
