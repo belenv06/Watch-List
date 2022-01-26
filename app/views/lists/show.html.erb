@@ -1,29 +1,34 @@
 
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80);">
   <div class="container">
-    <h1 class="text-center"><strong>Enjoy some reviews</strong></h1>
+    <h1 class="text-center pb-3"> <%= @list.name %> </h1>
+    <h2 class="text-center"><strong>Enjoy some reviews</strong></h2>
   </div>
 </div>
 
-<div class="container">
-
+<div class="container mt-5">
   <h2> Content </h2>
 
-  <%= link_to "Add a movie", list_path, :class => "btn btn-primary"%>
+  <div class="row justify-content-end"> <%= link_to "Add a movie", list_path, :class => "btn btn-primary"%> </div>
+  <div class="row justify-content-end"> <%= link_to "comment", new_list_bookmark_path(@list), :class => "btn btn-primary" %> </div>
 
     <div class=cards>
       <% @list.bookmarks.each do |bookmark| %>
         <div class="card">
           <img src= <%= bookmark.movie.poster_url %> />
-          <p> <strong> <%= bookmark.movie.title %> </strong> </p>
-          <p> <%= bookmark.movie.overview %> </p>
-          <p> <%= bookmark.movie.rating %> </p>
-          <small> <%= bookmark.comment %> </small>
-          <p> <%= link_to "delete", bookmark_path, method: :delete %> </p>
+            <div class="card-i">
+              <div class="card-info">
+                <p class="mt-0 mb-2"> <strong> <%= bookmark.movie.title %> </strong> </p>
+                <p class="mb-2"> <%= bookmark.movie.overview %> </p>
+              </div>
+              
+              <p class="mb-2"> <%= bookmark.movie.rating %> </p>
+              <small> <%= bookmark.comment %> </small>
+              <p class="text-right"> <%= link_to "delete", bookmark_path, method: :delete %> </p>
+            </div>
         </div>
       <% end %>
     </div>
 
-  <%= link_to "comment", new_list_bookmark_path(@list), :class => "btn btn-primary" %>
   <%#= link_to "Ver Bookmarks", bookmark_path(@bookmarks) %>
 </div>

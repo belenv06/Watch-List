@@ -10,7 +10,7 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  // border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -21,9 +21,23 @@
   padding-top: 30px;
 }
 
-.card {
-  padding: 25px;
-  
+.card:hover {
+  border: 2px solid #e6deca;
+  transition-duration: 0.5s;
+  // box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-i {
+  padding: 20px;
+}
+
+.card-info {
+  height: 100px;
+}
+
+img {
+  height: 450px;
+  object-fit: cover;
 }
 
 // Smallest device
